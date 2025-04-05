@@ -287,6 +287,23 @@ SELECT * FROM ORDERDETAILS;
 SELECT * FROM PRODUCTS;
 
 
+ALTER TABLE Products ADD COLUMN stock INT;
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE Products SET stock = 1000;
+
+ALTER TABLE orders ADD COLUMN payment_method VARCHAR(50) NULL;
+
+ALTER TABLE orders ADD COLUMN amount_paid VARCHAR(50) NULL;
+
+
+ALTER TABLE Products DROP COLUMN category;
+
+ALTER TABLE orders RENAME COLUMN payment_method TO PaymentMethod;
+
+ALTER TABLE orders RENAME COLUMN amount_paid TO amountpaid;
+
+
 
 
 
